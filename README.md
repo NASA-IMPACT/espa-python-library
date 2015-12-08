@@ -1,7 +1,11 @@
 ## PropertyDictionary
 Implements a dictionary which allows access to it's elements/attributes/properties using dot notation.
 
-### Example Usage
+### Installation
+
+```pip install --upgrade git+https://github.com/USGS-EROS/python-property-dictionary```
+
+### Usage
 
 ```
 >>> from PropertyDictionary.collection import PropertyDict
@@ -21,5 +25,5 @@ Implements a dictionary which allows access to it's elements/attributes/properti
 
 See [test.py](test.py) for additional example usage.
 
-## Limitations
+### Limitations
 If you create a key containing dots, like ```{'a.a': 3}``` or ```var['a.a']``` you will not be able to access the property using dot notation.
