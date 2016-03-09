@@ -9,4 +9,10 @@ Under construction
 
 ### Installation
 
+This will install a package named 'espa' into your python installation or virtual environment.
+
 ```pip install --upgrade git+https://github.com/USGS-EROS/espa-python-library```
+
+### Removal
+
+```pip install espa```
