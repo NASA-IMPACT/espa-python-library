@@ -1,1 +1,2 @@
 from property_dictionary import PropertyDict
+from xml_interface import XMLInterface
