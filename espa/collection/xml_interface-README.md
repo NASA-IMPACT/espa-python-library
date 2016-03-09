@@ -4,8 +4,9 @@ Implements an interface for parcing, writing, and validating XML files utilizing
 ### Usage
 
 ```
+>>> from lxml import objectify as objectify
 >>> from espa import XMLInterface
->>> xml_xsd = str(<the xsd as a string>)
+>>> xml_xsd = str(<THE XSD AS A STRING>)
 >>> xml_filename = 'animals.xml'
 >>> xml = XMLInterface(xml_xsd=xml_xsd, xml_filename=xml_filename)
 >>> xml.parse()
