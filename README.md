@@ -5,6 +5,7 @@ Under construction
 ### Available library modules
 - [PropertyDict](espa/collection/property_dictionary-README.md)
 - [XMLInterface](espa/collection/xml_interface-README.md)
+- [MetadataApi](espa/collection/metadata_api-README.md)
 
 ### Installation
 
