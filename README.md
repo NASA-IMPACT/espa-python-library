@@ -15,4 +15,4 @@ This will install a package named 'espa' into your python installation or virtua
 
 ### Removal
 
-```pip install espa-python-library```
+```pip uninstall espa-python-library```
