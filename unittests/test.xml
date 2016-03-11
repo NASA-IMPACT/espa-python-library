@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<espa_metadata version="1.3"
+xmlns="http://espa.cr.usgs.gov/v1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://espa.cr.usgs.gov/v1 http://espa.cr.usgs.gov/schema/espa_internal_metadata_v1_3.xsd">
+
+    <global_metadata>
+        <data_provider>USGS/EROS</data_provider>
+        <satellite>LANDSAT_8</satellite>
+        <instrument>OLI_TIRS</instrument>
+        <acquisition_date>2013-06-30</acquisition_date>
+        <scene_center_time>18:26:43.2511101Z</scene_center_time>
+        <level1_production_date>2014-03-12T00:44:26Z</level1_production_date>
+        <solar_angles zenith="28.256847" azimuth="142.288361" units="degrees"/>
+        <earth_sun_distance>1.016642</earth_sun_distance>
+        <wrs system="2" path="41" row="27"/>
+        <scene_id>LC08_L1T_041027_20130630_20140312_02</scene_id>
+        <lpgs_metadata_file>LC08_L1T_041027_20130630_20140312_02_MTL.txt</lpgs_metadata_file>
+        <corner location="UL" latitude="48.523160" longitude="-115.596920"/>
+        <corner location="LR" latitude="46.346560" longitude="-112.663080"/>
+        <bounding_coordinates>
+            <west>-115.651990</west>
+            <east>-112.486989</east>
+            <north>48.523294</north>
+            <south>46.346416</south>
+        </bounding_coordinates>
+        <projection_information projection="UTM" datum="WGS84" units="meters">
+            <corner_point location="UL" x="603600.000000" y="5375400.000000"/>
+            <corner_point location="LR" x="833700.000000" y="5141700.000000"/>
+            <grid_origin>CENTER</grid_origin>
+            <utm_proj_params>
+                <zone_code>11</zone_code>
+            </utm_proj_params>
+        </projection_information>
+        <orientation_angle>0.000000</orientation_angle>
+    </global_metadata>
+
+    <bands>
+        <band product="L1T" name="band1" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 1 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B1.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.012148" bias="-60.74"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band2" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 2 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B2.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.01244" bias="-62.199"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band3" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 3 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B3.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.011463" bias="-57.316"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band4" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 4 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B4.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0096663" bias="-48.332"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band5" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 5 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B5.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0059153" bias="-29.577"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band6" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 6 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B6.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0014711" bias="-7.3554"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band7" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 7 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B7.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.00049584" bias="-2.4792"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band8" category="image" data_type="UINT16" nlines="15581" nsamps="15341" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 8 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B8.img</file_name>
+            <pixel_size x="15" y="15" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.01094" bias="-54.698"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band9" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 9 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B9.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0023118" bias="-11.559"/>
+            <reflectance gain="2e-05" bias="-0.1"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band10" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 10 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B10.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0003342" bias="0.1"/>
+            <thermal_const k1="774.89" k2="1321.08"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="band11" category="image" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band 11 digital numbers</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_B11.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>digital numbers</data_units>
+            <valid_range min="1" max="65535"/>
+            <radiance gain="0.0003342" bias="0.1"/>
+            <thermal_const k1="480.89" k2="1201.14"/>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+        <band product="L1T" name="qa" category="qa" data_type="UINT16" nlines="7791" nsamps="7671" fill_value="0">
+            <short_name>LC8DN</short_name>
+            <long_name>band quality</long_name>
+            <file_name>LC08_L1T_041027_20130630_20140312_02_BQA.img</file_name>
+            <pixel_size x="30" y="30" units="meters"/>
+            <resample_method>cubic convolution</resample_method>
+            <data_units>quality/feature classification</data_units>
+            <valid_range min="0" max="65535"/>
+            <bitmap_description>
+                <bit num="0">Data Fill Flag (0 = valid data, 1 = invalid data)</bit>
+                <bit num="1">Terrain Occlusion (0 = not terrain occluded, 1 = terrain occluded)</bit>
+                <bit num="2">Radiometric Saturation</bit>
+                <bit num="3">Radiometric Saturation</bit>
+                <bit num="4">Cloud</bit>
+                <bit num="5">Cloud Confidence</bit>
+                <bit num="6">Cloud Confidence</bit>
+                <bit num="7">Cloud Shadow Confidence</bit>
+                <bit num="8">Cloud Shadow Confidence</bit>
+                <bit num="9">Snow/Ice Confidence</bit>
+                <bit num="10">Snow/Ice Confidence</bit>
+                <bit num="11">Cirrus Confidence</bit>
+                <bit num="12">Cirrus Confidence</bit>
+                <bit num="13">Not used</bit>
+                <bit num="14">Not used</bit>
+                <bit num="15">Not used</bit>
+            </bitmap_description>
+            <app_version>LPGS_2.3.0</app_version>
+            <production_date>2014-03-12T00:44:26Z</production_date>
+        </band>
+    </bands>
+</espa_metadata>
