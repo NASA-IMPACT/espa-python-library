@@ -38,7 +38,7 @@ class Metadata(XMLInterface):
         an utilizes that source during initialization of the parent class.
 
         Args:
-            xml_filename (str) The name of the file to parse.
+            xml_filename (str): The name of the file to parse.
         """
 
         # Get the logger to use
@@ -94,7 +94,7 @@ class Metadata(XMLInterface):
         # (fail)
         if xml_xsd is None:
             raise MetadataError('Failed to find ESPA XML schema for'
-                                    ' validation')
+                                ' validation')
 
         super(Metadata, self).__init__(xml_xsd=xml_xsd,
-                                           xml_filename=xml_filename)
+                                       xml_filename=xml_filename)
