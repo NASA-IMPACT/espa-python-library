@@ -4,8 +4,6 @@
 import os
 import unittest
 from cStringIO import StringIO
-
-
 from lxml import objectify as objectify
 
 
@@ -63,6 +61,7 @@ class TestMetadata(unittest.TestCase):
 
         with self.assertRaises(XMLError):
             self.mm.validate()
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
