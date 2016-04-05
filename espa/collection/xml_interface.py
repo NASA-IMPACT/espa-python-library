@@ -83,7 +83,7 @@ class XMLInterface(object):
         lxml objectify object.
 
         Args:
-            xml_filename (str) The name of the file to parse.
+            xml_filename (str): The name of the file to parse.
 
         Raises:
             XMLError: An error occurred using the lxml module.
@@ -123,6 +123,14 @@ class XMLInterface(object):
         except etree.LxmlError:
             self.logger.exception('LXML Error')
             raise XMLError('Validation Error - See LXML Error')
+
+    def debug(self):
+        """Prints the XML to stdout for debugging purposes
+        """
+
+        print(etree.tostring(self.xml_object,
+                             encoding='utf-8',
+                             pretty_print=True))
 
     def write(self, xml_filename=None):
         """Writes the XML to a file
