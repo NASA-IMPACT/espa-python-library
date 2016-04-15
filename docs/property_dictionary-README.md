@@ -19,7 +19,7 @@ Implements a dictionary which allows access to it's elements/attributes/properti
 >>> 
 ```
 
-See [property_dictionary-test.py](../examples/property_dictionary-test.py) for additional example usage.
+See [test_property_dictionary.py](../unittests/test_property_dictionary.py) for additional example usage.
 
 ### Limitations
 If you create a key containing dots, like ```{'a.a': 3}``` or ```var['a.a']``` you will not be able to access the property using dot notation.
