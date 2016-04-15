@@ -1,12 +1,12 @@
 ## ESPA Python Library
 
-#Under construction
+# Under construction
 
 ### Available library modules
-- [ENVIHeader](espa/image/envi-README.md)
-- [Metadata](espa/metadata/metadata_api-README.md)
-- [PropertyDict](espa/collection/property_dictionary-README.md)
-- [XMLInterface](espa/collection/xml_interface-README.md)
+- [ENVIHeader](docs/envi-README.md)
+- [Metadata](docs/metadata_api-README.md)
+- [PropertyDict](docs/property_dictionary-README.md)
+- [XMLInterface](docs/xml_interface-README.md)
 
 ### Installation
 
