@@ -1,6 +1,4 @@
-## ESPA Python Library
-
-# Under construction
+## ESPA Python Library - V1.0.0
 
 ### Available library modules
 - [ENVIHeader](docs/envi-README.md)
@@ -12,7 +10,7 @@
 
 This will install a package named 'espa' into your python installation or virtual environment.
 
-```pip install --upgrade git+https://github.com/USGS-EROS/espa-python-library```
+```pip install --upgrade git+https://github.com/USGS-EROS/espa-python-library.git@v1.0.0#espa```
 
 ### Removal
 
