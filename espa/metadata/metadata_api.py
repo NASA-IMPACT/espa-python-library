@@ -46,7 +46,7 @@ class Metadata(XMLInterface):
         # Just in-case one was not defined
         logger.addHandler(logging.NullHandler())
 
-        xsd_version = '1_3'
+        xsd_version = '2_0'
         xsd_filename = 'espa_internal_metadata_v{0}.xsd'.format(xsd_version)
         xsd_uri = ('http://espa.cr.usgs.gov/schema/{0}'.format(xsd_filename))
 
