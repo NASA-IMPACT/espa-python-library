@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<espa_metadata version="1.3"
-xmlns="http://espa.cr.usgs.gov/v1"
+<espa_metadata version="2.0"
+xmlns="http://espa.cr.usgs.gov/v2"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://espa.cr.usgs.gov/v1 http://espa.cr.usgs.gov/schema/espa_internal_metadata_v1_3.xsd">
+xsi:schemaLocation="http://espa.cr.usgs.gov/v2 http://espa.cr.usgs.gov/schema/espa_internal_metadata_v2_0.xsd">
 
     <global_metadata>
         <data_provider>USGS/EROS</data_provider>
@@ -15,7 +15,7 @@ xsi:schemaLocation="http://espa.cr.usgs.gov/v1 http://espa.cr.usgs.gov/schema/es
         <solar_angles zenith="28.256847" azimuth="142.288361" units="degrees"/>
         <earth_sun_distance>1.016642</earth_sun_distance>
         <wrs system="2" path="41" row="27"/>
-        <scene_id>LC08_L1T_041027_20130630_20140312_02</scene_id>
+        <product_id>LC08_L1T_041027_20130630_20140312_02</product_id>
         <lpgs_metadata_file>LC08_L1T_041027_20130630_20140312_02_MTL.txt</lpgs_metadata_file>
         <corner location="UL" latitude="48.523160" longitude="-115.596920"/>
         <corner location="LR" latitude="46.346560" longitude="-112.663080"/>

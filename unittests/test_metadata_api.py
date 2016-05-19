@@ -24,7 +24,7 @@ class TestMetadata(unittest.TestCase):
         pass
 
     def test_find_version(self):
-        self.assertEqual(self.mm.xml_object.get('version'), '1.3')
+        self.assertEqual(self.mm.xml_object.get('version'), '2.0')
 
     def test_find_corners(self):
         self.assertEqual(self.mm.xml_object.global_metadata.corner[0]
