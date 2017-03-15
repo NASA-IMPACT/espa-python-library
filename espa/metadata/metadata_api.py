@@ -46,55 +46,64 @@ class Metadata(XMLInterface):
         # Just in-case one was not defined
         logger.addHandler(logging.NullHandler())
 
-        xsd_version = '2_0'
-        xsd_filename = 'espa_internal_metadata_v{0}.xsd'.format(xsd_version)
-        xsd_uri = ('http://espa.cr.usgs.gov/schema/{0}'.format(xsd_filename))
-
         # Create a schema object from the metadata xsd source
         xml_xsd = None
-        # Search for the environment variable and use that if valid (first)
-        if 'ESPA_SCHEMA' in os.environ:
+        xsd_path = None
+        # Search for an environment variable and use that if valid (first)
+        if 'XML_SCHEMA' in os.environ:
+            xsd_path = os.getenv('XML_SCHEMA')
+        elif 'ESPA_SCHEMA' in os.environ:
             xsd_path = os.getenv('ESPA_SCHEMA')
+        elif 'ARD_SCHEMA' in os.environ:
+            xsd_path = os.getenv('ARD_SCHEMA')
+        elif xml_filename is None:
+            raise MetadataError('Must provide an xml_filename if no environment'
+                                ' variables are defined (XML_SCHEMA,'
+                                ' ESPA_SCHEMA, ARD_SCHEMA) so that an XSD'
+                                ' Schema can be loaded')
+
+        if xsd_path is not None:
+            # An environment variable from above was specified, so use it
+            # to retrieve the schema
 
             if os.path.isfile(xsd_path):
                 with open(xsd_path, 'r') as xsd_fd:
                     xml_xsd = xsd_fd.read()
                 logger.info('Using XSD source {0} for validation'
                             .format(xsd_path))
-            else:
-                logger.info('Defaulting to espa-product-formatter'
-                            ' installation directory')
-                xml_xsd = None
-        else:
-            logger.warning('Missing environment variable ESPA_SCHEMA'
-                           ' defaulting to espa-product-formatter'
-                           ' installation directory')
-            xml_xsd = None
 
-        # Use the espa-product-formatter installation directory (second)
-        if xml_xsd is None:
-            xsd_path = ('/usr/local/espa-product-formatter/schema/{0}'
-                        .format(xsd_filename))
-            if os.path.isfile(xsd_path):
-                with open(xsd_path, 'r') as xsd_fd:
-                    xml_xsd = xsd_fd.read()
-                logger.info('Using XSD source {0} for validation'
-                            .format(xsd_path))
-            else:
-                logger.info('Defaulting to {0}'.format(xsd_uri))
-                xml_xsd = None
+        elif xml_filename is not None:
+            # An input file was specified instead of one of the environment
+            # variables so use the schemaLocation defined in the file if
+            # provided
 
-        # Use the schema_uri (third)
-        if xml_xsd is None:
-            with urllib2.urlopen(xsd_uri) as xsd_fd:
-                xml_xsd = xsd_fd.read()
-            logger.info('Using schema source {0} for validation'
-                        .format(xsd_uri))
+            # Read the file into a string to be used for parsing
+            with open(xml_filename, 'r') as xml_fd:
+                xml_text = xml_fd.read()
+
+            # Load the file into an objectify object
+            xml_object = objectify.fromstring(xml_text)
+            xsd_uri = None
+
+            # Retrieve xsi:schemaLocation from the XML file
+            for attribute in xml_object.attrib:
+                if attribute.endswith('schemaLocation'):
+                    xsd_uri = xml_object.attrib[attribute].split()[1]
+
+            # If not present then fail
+            if not xsd_uri:
+                raise MetadataError('No schemaLocation defined in provided'
+                                    ' XML data')
+
+            # Read the schema
+            xsd_fd = urllib2.urlopen(xsd_uri)
+            xml_xsd = xsd_fd.read()
+            xsd_fd.close()
+            logger.info('Using XSD source {0} for validation'.format(xsd_uri))
 
         # (fail)
         if xml_xsd is None:
-            raise MetadataError('Failed to find ESPA XML schema for'
-                                ' validation')
+            raise MetadataError('Failed to find XML schema for validation')
 
         super(Metadata, self).__init__(xml_xsd=xml_xsd,
                                        xml_filename=xml_filename)
