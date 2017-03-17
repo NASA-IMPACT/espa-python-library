@@ -22,19 +22,18 @@ class MetadataError(Exception):
 
 
 class Metadata(XMLInterface):
-    """Enhances the XMLInterface specifically for an ESPA Metadata XML
+    """Enhances the XMLInterface specifically for an XSD Schema defined XMLs
 
     Determines the best source for the schema to use for validation of the
-    specified ESPA Metadata XML.  First the ESPA_SCHEMA environment variable
-    is searched for and used if present.  Second the installation directory
-    where the schema should exist if installed on the local system.  And third
-    the URI where the schema should reside on the internet.
+    specified Metadata XML.  First environment variables are used in this
+    this order (XML_SCHEMA, ESPA_SCHEMA, ARD_SCHEMA) and used if present.
+    Second the URI where the schema should reside on the internet.
     """
 
     def __init__(self, xml_filename=None):
         """Object initialization and parsing of the XML document
 
-        Performes determination for the source of the ESPA Metadata XML schema
+        Performes determination for the source of the Metadata XML schema
         an utilizes that source during initialization of the parent class.
 
         Args:
@@ -107,3 +106,6 @@ class Metadata(XMLInterface):
 
         super(Metadata, self).__init__(xml_xsd=xml_xsd,
                                        xml_filename=xml_filename)
+
+        if xml_filename is not None:
+            super(Metadata, self).parse(xml_filename=xml_filename)
