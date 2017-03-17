@@ -11,7 +11,7 @@ from espa import XMLError, XMLInterface
 from espa import MetadataError, Metadata
 
 
-class TestMetadata(unittest.TestCase):
+class TestMetadata1(unittest.TestCase):
     """Test a few things, and expand on it someday"""
 
     def setUp(self):
@@ -51,6 +51,18 @@ class TestMetadata(unittest.TestCase):
         self.mm.write(xml_filename='walnuts_pass.xml')
         self.assertTrue(os.path.exists('walnuts_pass.xml') == 1)
         os.unlink('walnuts_pass.xml')
+
+
+class TestMetadata2(unittest.TestCase):
+    """Test a few things, and expand on it someday"""
+
+    def setUp(self):
+
+        xml_filename = 'unittests/test.xml'
+        self.mm = Metadata(xml_filename=xml_filename)
+
+    def tearDown(self):
+        pass
 
     def test_validation_fail(self):
         myE = objectify.ElementMaker(annotate=False, namespace=None,
