@@ -25,15 +25,19 @@ class Metadata(XMLInterface):
     """Enhances the XMLInterface specifically for an XSD Schema defined XMLs
 
     Determines the best source for the schema to use for validation of the
-    specified Metadata XML.  First environment variables are used in this
-    this order (XML_SCHEMA, ESPA_SCHEMA, ARD_SCHEMA) and used if present.
-    Second the URI where the schema should reside on the internet.
+    specified Metadata XML.
+    First: Environment variables are always used if present, but not all are
+           tried.
+           They are searched for in this order:
+               (XML_SCHEMA, ESPA_SCHEMA, ARD_SCHEMA)
+    Second: The URI where the schema should reside on the internet as defined
+            by the input XML.
     """
 
     def __init__(self, xml_filename=None):
         """Object initialization and parsing of the XML document
 
-        Performes determination for the source of the Metadata XML schema
+        Performs determination for the source of the Metadata XML schema
         an utilizes that source during initialization of the parent class.
 
         Args:
