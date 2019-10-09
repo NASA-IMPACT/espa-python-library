@@ -14,13 +14,13 @@ class PropertyDict(dict):
         super(PropertyDict, self).__init__()
         for arg in args:
             if isinstance(arg, dict):
-                for key, value in arg.items():
+                for key, value in list(arg.items()):
                     self[key] = self.parse(value)
             else:
                 raise TypeError('Unsupported argument {0}'.format(type(arg)))
 
         if kwargs:
-            for key, value in kwargs.items():
+            for key, value in list(kwargs.items()):
                 self[key] = self.parse(value)
 
     @classmethod
