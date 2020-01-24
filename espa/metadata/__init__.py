@@ -1,1 +1,1 @@
-from metadata_api import Metadata
+from espa.metadata.metadata_api import Metadata

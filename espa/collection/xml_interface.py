@@ -6,7 +6,7 @@ License:
 
 import os
 import logging
-from cStringIO import StringIO
+from io import StringIO, BytesIO
 
 
 from lxml import etree as etree
@@ -64,7 +64,7 @@ class XMLInterface(object):
 
         # Create a schema from the XSD
         try:
-            self.xml_schema = etree.XMLSchema(file=StringIO(xml_xsd))
+            self.xml_schema = etree.XMLSchema(file=BytesIO(xml_xsd))
         except etree.LxmlError:
             self.logger.exception('LXML Error')
             raise XMLError('Schema Creation Error - See LXML Error')
@@ -95,7 +95,7 @@ class XMLInterface(object):
             name = xml_filename
 
         # Read the file into a string to be used for parsing
-        with open(name, 'r') as xml_fd:
+        with open(name, 'rb') as xml_fd:
             xml_text = xml_fd.read()
 
         try:
@@ -158,8 +158,9 @@ class XMLInterface(object):
         try:
             # Create and populate a temporary file
             temp_name = 'temp_ESPA_XML_{0}'.format(name)
-            with open(temp_name, 'w') as xml_fd:
-                xml_fd.write('<?xml version="1.0" encoding="utf-8"?>\n')
+            with open(temp_name, 'wb') as xml_fd:
+                xml_fd.write(bytes('<?xml version="1.0" encoding="utf-8"?>\n',
+                                   'UTF-8'))
                 xml_fd.write(etree.tostring(self.xml_object, encoding='utf-8',
                                             pretty_print=True))
 
