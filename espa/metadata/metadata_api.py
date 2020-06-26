@@ -7,12 +7,11 @@ License:
 import os
 import sys
 import logging
-import urllib.request
-
-
+try:  #python3
+    from urllib.request import urlopen
+except:  #python2
+    from urllib2 import urlopen
 from lxml import objectify as objectify
-
-
 from espa import XMLError, XMLInterface
 
 
@@ -99,7 +98,7 @@ class Metadata(XMLInterface):
                                     ' XML data')
 
             # Read the schema
-            xsd_fd = urllib.request.urlopen(xsd_uri)
+            xsd_fd = urlopen(xsd_uri)
             xml_xsd = xsd_fd.read()
             xsd_fd.close()
             logger.info('Using XSD source {0} for validation'.format(xsd_uri))
