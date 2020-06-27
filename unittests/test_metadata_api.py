@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 
 import os
 import unittest
-from io import StringIO
+from cStringIO import StringIO
 from lxml import objectify as objectify
 
 

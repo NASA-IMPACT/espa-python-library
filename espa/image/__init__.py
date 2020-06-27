@@ -1,1 +1,1 @@
-from espa.image.envi import ENVIHeader
+from envi import ENVIHeader
