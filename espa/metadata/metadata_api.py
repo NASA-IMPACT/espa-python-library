@@ -8,7 +8,7 @@ import os
 import sys
 import logging
 import urllib2
-
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 from lxml import objectify as objectify
 
