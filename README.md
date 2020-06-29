@@ -1,4 +1,4 @@
-## ESPA Python Library - V2.0.0
+## ESPA Python Library - V1.1.0
 
 ### Available library modules
 - [ENVIHeader](docs/envi-README.md)

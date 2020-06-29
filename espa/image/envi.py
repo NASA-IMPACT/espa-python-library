@@ -7,7 +7,7 @@ License:
 import os
 import sys
 import logging
-from io import StringIO
+from cStringIO import StringIO
 
 
 class ENVIHeader(object):
@@ -76,7 +76,7 @@ class ENVIHeader(object):
                     if not line.strip().endswith('}'):
                         find_ending_bracket(tmp_fd)
                     hdr_text.write('description = {{{0}}}\n'
-                                   .format(description))
+                                  .format(description))
 
                 elif line.startswith('band names'):
                     # This may be on multiple lines so read lines until
@@ -84,7 +84,7 @@ class ENVIHeader(object):
                     if not line.strip().endswith('}'):
                         find_ending_bracket(tmp_fd)
                     hdr_text.write('band names = {{{0}}}\n'
-                                   .format(band_names))
+                                  .format(band_names))
 
                 elif line.startswith('data type'):
                     if data_type is not None:

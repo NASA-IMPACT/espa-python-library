@@ -7,8 +7,8 @@ License:
 import os
 import sys
 import logging
-import urllib.request
-
+import urllib2
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 from lxml import objectify as objectify
 
@@ -70,7 +70,7 @@ class Metadata(XMLInterface):
             # to retrieve the schema
 
             if os.path.isfile(xsd_path):
-                with open(xsd_path, 'rb') as xsd_fd:
+                with open(xsd_path, 'r') as xsd_fd:
                     xml_xsd = xsd_fd.read()
                 logger.info('Using XSD source {0} for validation'
                             .format(xsd_path))
@@ -81,7 +81,7 @@ class Metadata(XMLInterface):
             # provided
 
             # Read the file into a string to be used for parsing
-            with open(xml_filename, 'rb') as xml_fd:
+            with open(xml_filename, 'r') as xml_fd:
                 xml_text = xml_fd.read()
 
             # Load the file into an objectify object
@@ -99,7 +99,7 @@ class Metadata(XMLInterface):
                                     ' XML data')
 
             # Read the schema
-            xsd_fd = urllib.request.urlopen(xsd_uri)
+            xsd_fd = urllib2.urlopen(xsd_uri)
             xml_xsd = xsd_fd.read()
             xsd_fd.close()
             logger.info('Using XSD source {0} for validation'.format(xsd_uri))
